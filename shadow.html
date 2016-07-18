@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./style.css">
+    <title>Iron Style</title>
+  </head>
+  <body>
+    <div id="heading">
+      <h1><a href="index.html">The Iron Style Generator</a></h1>
+      <img src="./watson.jpg">
+      <div id="navigation">
+        <ul>
+          <li><a href="background.html" content="Background Color"></a></li>
+          <li><a href="color.html" content="Text Color"></a></li>
+          <li><a href="width.html" content="Page Width"></a></li>
+          <li><a href="line.html" content="Line Height"></a></li>
+          <li><a href="size.html" content="Font Size"></a></li>
+          <li><a href="radius.html" content="Border Radius"></a></li>
+          <li><a href="shadow.html" content="Box Shadow"></a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="wrapper">
+      <div id="content">
+        <h2>Border Radius Picker</h2>
+        <p>Set the <code>box-shadow</code> property on the <code>#sidebar</code> element with the selector below.</p>
+        <form>
+          <label>Box Shadow</label>
+          <select>
+            <option value="">None</option>
+            <option value="10px 10px 5px 0px rgba(0,0,0,0.75)">Sharp</option>
+            <option value="10px 10px 25px 0px rgba(0,0,0,0.75)">Blurred</option>
+          </select>
+        </form>
+      </div>
+      <div id="sidebar">
+        <h3>Aside goes here</h3>
+        <p>Also, a link to the <a href="generated_stylesheet.html">stylesheet you generated.</a></p>
+      </div>
+    </div>
+    <div id="footer">Footer</div>
+    <script src="./app.js"></script>
+    <script>
+      var select = document.querySelector("select");
+      if(sessionStorage["boxShadow"]){
+        setSelect(select, "boxShadow")
+      }
+      select.addEventListener("change", function(){
+        document.querySelector("#sidebar").style.boxShadow = select.value;
+        sessionStorage.setItem("boxShadow", select.value);
+      });
+    </script>
+  </body>
+</html>

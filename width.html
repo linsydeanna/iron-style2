@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="./style.css">
+    <title>Iron Style</title>
+  </head>
+  <body>
+    <div id=heading>
+      <h1><a href="index.html">The Iron Style Generator</a></h1>
+      <img src="./watson.jpg">
+      <div id=navigation>
+        <ul>
+          <li><a href="background.html">Background Color</a></li>
+          <li><a href="color.html">Text Color</a></li>
+          <li><a href="width.html">Page Width</a></li>
+          <li><a href="line.html">Line Height</a></li>
+          <li><a href="size.html">Font Size</a></li>
+          <li><a href="radius.html">Border Radius</a></li>
+          <li><a href="shadow.html">Box Shadow</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id=wrapper>
+      <div id=content>
+        <h2>Page Width Picker</h2>
+        <p>Set the <code>width</code> property on the <code>body</code> element with the selector below.</p>
+        <form>
+          <label>Page Width</label>
+          <select>
+            <option value="60%">60%</option>
+            <option value="80%" selected>80%</option>
+            <option value="100%">100%</option>
+          </select>
+        </form>
+      </div>
+      <div id=sidebar>
+        <h3>Aside goes here</h3>
+        <p>Also, a link to the <a href="generated_stylesheet.html">stylesheet you generated.</a></p>
+      </div>
+    </div>
+    <div id=footer>Footer</div>
+    <script src="./app.js"></script>
+    <script>
+      var select = document.querySelector("select");
+      if(sessionStorage["width"]){
+        setSelect(select, "width")
+      }
+      select.addEventListener("change", function(){
+        var sides = document.querySelector("body");
+        sides.style.width= select.value;
+        sessionStorage.setItem("width", select.value);
+      });
+    </script>
+  </body>
+</html>

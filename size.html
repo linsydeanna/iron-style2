@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./style.css">
+    <title>Iron Style</title>
+  </head>
+  <body>
+    <div id="heading">
+      <h1><a href="index.html">The Iron Style Generator</a></h1>
+      <img src="./watson.jpg">
+      <div id="navigation">
+        <ul>
+          <li><a href="background.html">Background Color</a></li>
+          <li><a href="color.html">Text Color</a></li>
+          <li><a href="width.html">Page Width</a></li>
+          <li><a href="line.html">Line Height</a></li>
+          <li><a href="size.html">Font Size</a></li>
+          <li><a href="radius.html">Border Radius</a></li>
+          <li><a href="shadow.html">Box Shadow</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="wrapper">
+      <div id="content">
+        <h2>Font Size Picker</h2>
+        <p>Set the <code>font-size</code> property on the <code>#content</code> element with the selector below.</p>
+        <form>
+          <label>Font Size</label>
+          <select>
+            <option value="1vw">1vw</option>
+            <option value="1.1vw">1.1vw</option>
+            <option value="1.2vw">1.2vw</option>
+            <option value="1.4vw">1.4vw</option>
+            <option value="1.8vw">1.8vw</option>
+            <option value="2.5vw">2.5vw</option>
+          </select>
+        </form>
+      </div>
+      <div id="sidebar">
+        <h3>Aside goes here</h3>
+        <p>Also, a link to the <a link="generated_stylesheet.html">stylesheet you generated.</a></p>
+      </div>
+    </div>
+    <div id="footer">Footer</div>
+    <script src="./app.js"></script>
+    <script>
+      var select = document.querySelector("select");
+      if(sessionStorage["fontSize"]){
+        setSelect(select, "fontSize")
+      }
+      select.addEventListener("change", function(){
+        document.querySelector("#content").style.fontSize = select.value;
+        sessionStorage.setItem("fontSize", select.value);
+      });
+    </script>
+  </body>
+</html>

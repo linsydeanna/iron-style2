@@ -1,0 +1,75 @@
+html {
+  background: aliceblue;
+}
+body {
+  min-height: 100vh;
+  width: 80%;
+  margin: 0 auto;
+  background: #fff;
+  font-family: Helvetica;
+}
+#heading {
+  border-bottom: 2px solid #2f2e2f;
+  background: #999;
+}
+#navigation {
+  border-top: 2px solid #2f2e2f;
+  margin-top: -4px;
+}
+#navigation ul {
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+}
+#navigation ul li {
+  list-style-type: none;
+}
+h1 {
+  background: #2f2e2f;
+  color: #fff;
+  padding: 0.5em;
+  font-family: Georgia;
+}
+h1 a {
+  text-decoration: none;
+  color: #fff;
+}
+img {
+  width: 100%;
+}
+#wrapper {
+  display: flex;
+  flex: 1;
+}
+#content {
+  padding: 1em;
+  flex: 1;
+}
+#sidebar {
+  background: #e6c2ba;
+  color: #333;
+  flex: 0 0 12em;
+  margin: 1em;
+  padding-left: 0.5em;
+}
+#footer {
+  background: #999;
+  color: #fff;
+  padding: 2em;
+}
+/* taken from online.theironyard.com */
+code {
+  background-color: #e3e7e9;
+  border-radius: 4px;
+  color: #202f37;
+  display: inline-block;
+  font-family: "source-code-pro", monaco, Consolas, "Lucida Console", monospace, sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  padding: 0.125rem 0.25rem;
+}
+pre {
+  background: #999;
+  color: #fff;
+  padding: 1em;
+}

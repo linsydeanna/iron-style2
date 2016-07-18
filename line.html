@@ -1,0 +1,66 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./style.css">
+    <title>Iron Style</title>
+  </head>
+  <body>
+    <div id="heading">
+      <h1><a href="index.html">The Iron Style Generator</a></h1>
+      <img src="./watson.jpg">
+      <div id="navigation">
+        <ul>
+          <li><a href="background.html">Background Color</a></li>
+          <li><a href="color.html">Text Color<a/></li>
+          <li><a href="width.html">Page Width<a/></li>
+          <li><a href="line.html">Line Height<a/></li>
+          <li><a href="size.html">Font Size<a/></li>
+          <li><a href="radius.html">Border Radius<a/></li>
+          <li><a href="shadow.html">Box Shadow<a/></li>
+        </ul>
+      </div>
+    </div>
+    <div id="wrapper">
+      <div id="content">
+        <h2>Page Width Picker</h2>
+        <p>Set the <code>line-height</code> property on the <code>#content</code> element with the selector below.</p>
+        <form>
+          <label>Line Height</label>
+          <select>
+            <option value="0.8">0.8</option>
+            <option value="1" selected>1</option>
+            <option value="1.2">1.2</option>
+            <option value="1.4">1.4</option>
+            <option value="1.6">1.6</option>
+          </select>
+        </form>
+        <p>This property is hard to appreciate without a lot of text, so here's a lot of text (from the <a href="http://baconipsum.com">Bacon Ipsum</a> site).</p>
+        <p>Bacon ipsum dolor amet biltong pig veniam nostrud. Meatball nulla pork loin consequat turkey aliquip frankfurter magna ribeye. Sausage excepteur kevin ullamco shankle cupim swine. Et biltong jowl, laborum ham hock mollit ut pig shank pork chop officia deserunt incididunt voluptate ball tip.</p>
+
+        <p>Quis sirloin biltong nisi fatback commodo culpa id. Chicken est corned beef venison shoulder ut. Brisket landjaeger ex labore tongue officia, dolore short loin ut incididunt magna aute tri-tip sint fatback. Rump ball tip ham frankfurter, est do esse culpa aute sirloin cillum adipisicing in sausage commodo. Shankle ground round non beef spare ribs.</p>
+
+        <p>Flank officia esse leberkas dolore aliquip. Pig velit corned beef exercitation, pork belly esse jerky lorem. Salami kielbasa voluptate proident, dolor pig andouille ipsum cupidatat. Drumstick spare ribs strip steak cupim filet mignon, meatloaf ball tip ullamco elit. In pancetta mollit capicola turkey. Beef ribs veniam ullamco drumstick non, strip steak ut mollit et.</p>
+
+        <p>Landjaeger tenderloin et, alcatra in labore eu kevin tongue boudin ut in cupidatat pastrami beef ribs. Kevin tri-tip lorem elit chicken landjaeger pancetta pastrami fatback ut. Et anim jerky ham. Alcatra tri-tip dolore in.</p>
+
+        <p>Aliqua rump pork chop non porchetta tempor dolor minim pork belly irure officia sint. Pork belly hamburger non doner, nostrud spare ribs pork loin nisi turkey venison. Lorem est tail deserunt, kevin pork tongue turkey bresaola bacon. Ham hock ball tip turducken pork chop occaecat ad in jowl meatloaf boudin tri-tip shank esse ham hamburger. Mollit in reprehenderit magna picanha, nisi excepteur consequat chuck short loin laboris pork loin dolore non. Laboris leberkas quis, in in ham hock pig jerky hamburger dolore ea short ribs tenderloin rump pork chop. Rump enim porchetta shoulder.</p>
+      </div>
+      <div id="sidebar">
+        <h3>Aside goes here</h3>
+        <p>Also, a link to the <a href="generated_stylesheet.html">stylesheet you generated.</a></p>
+      </div>
+    </div>
+    <div id="footer">Footer</div>
+    <script src="./app.js"></script>
+    <script>
+      var select = document.querySelector("select");
+      if(sessionStorage["lineHeight"]){
+        setSelect(select, "lineHeight")
+      }
+      select.addEventListener("change", function(){
+        document.querySelector("#content").style.lineHeight = select.value;
+        sessionStorage.setItem("lineHeight", select.value);
+      });
+    </script>
+  </body>
+</html>
